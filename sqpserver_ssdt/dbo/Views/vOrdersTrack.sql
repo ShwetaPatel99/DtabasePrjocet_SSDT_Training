@@ -1,0 +1,1 @@
+﻿Create view vOrdersTrackASSELECT ord_date, COUNT(DISTINCT customer_id) As CustomerCnt, COUNT(DISTINCT salesman_id) As SalesCnt, AVG(purch_amt) as AverageAmt, SUM(purch_amt) as TotalAmt FROM orders o GROUP BY ord_date

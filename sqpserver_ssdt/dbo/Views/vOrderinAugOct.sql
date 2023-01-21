@@ -1,0 +1,1 @@
+﻿create view vOrderinAugOct asselect  s.S_Name,o.Ord_Date from  dbo.orders o inner join dbo.salesman s on o.salesman_id=s.salesman_idwhere o.Ord_Date in ('2012-08-17','2012-10-10')

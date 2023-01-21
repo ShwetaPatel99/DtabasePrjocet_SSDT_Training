@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>SSDT_SqlServerDB</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{419253e9-09da-4e60-88c7-471bcf22edf9}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>SSDT_SqlServerDB</RootNamespace>
+    <AssemblyName>SSDT_SqlServerDB</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="ETL\" />
+    <Folder Include="ETL\Tables\" />
+    <Folder Include="Target\" />
+    <Folder Include="Target\Tables\" />
+    <Folder Include="Security\" />
+    <Folder Include="dbo\Functions\" />
+    <Folder Include="dbo\User Defined Types\" />
+    <Folder Include="dbo\Sequences\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\temp_detelet_backup.sql" />
+    <Build Include="dbo\Tables\infoO.sql" />
+    <Build Include="dbo\Tables\Set_base_insert.sql" />
+    <Build Include="dbo\Tables\Set_base_Update.sql" />
+    <Build Include="dbo\Tables\SSIS_Perosn.sql" />
+    <Build Include="dbo\Tables\DyDatamask.sql" />
+    <Build Include="dbo\Tables\EmpData.sql" />
+    <Build Include="dbo\Tables\Admin.sql" />
+    <Build Include="dbo\Tables\CompanyProspect.sql" />
+    <Build Include="dbo\Tables\EmployeeHistory.sql" />
+    <Build Include="dbo\Tables\new-company-list-1.sql" />
+    <Build Include="dbo\Tables\Bulk_insert.sql" />
+    <Build Include="dbo\Tables\Test_SQL.sql" />
+    <Build Include="ETL\Tables\Person_Type2_Delete.sql" />
+    <Build Include="ETL\Tables\Person_Type2_Insert.sql" />
+    <Build Include="ETL\Tables\Person_Type2_Insert_NewTyp2.sql" />
+    <Build Include="ETL\Tables\Person_Type2_Update.sql" />
+    <Build Include="ETL\Tables\Person_Type2_Update_expiryType2.sql" />
+    <Build Include="dbo\Tables\abc.sql" />
+    <Build Include="dbo\Tables\info.sql" />
+    <Build Include="Target\Tables\Person_Type2.sql" />
+    <Build Include="dbo\Tables\dbo.Email.sql" />
+    <Build Include="dbo\Tables\TemporaL.sql" />
+    <Build Include="dbo\Tables\temporalhostory.sql" />
+    <Build Include="dbo\Tables\Employee.sql" />
+    <Build Include="dbo\Tables\Practicetable.sql" />
+    <Build Include="dbo\Tables\ErrorDescription.sql" />
+    <Build Include="dbo\Tables\Dim_Products.sql" />
+    <Build Include="dbo\Tables\containers.sql" />
+    <Build Include="Target\Tables\Dim_Product.sql" />
+    <Build Include="ETL\Tables\Delete_Product.sql" />
+    <Build Include="ETL\Tables\Insert_Product.sql" />
+    <Build Include="ETL\Tables\NewInsert_Product.sql" />
+    <Build Include="ETL\Tables\NewUpdateExpiry_Product.sql" />
+    <Build Include="ETL\Tables\Update_Product.sql" />
+    <Build Include="dbo\Tables\SampleData.sql" />
+    <Build Include="dbo\Tables\File_Table.sql" />
+    <Build Include="dbo\Tables\SSISTest.sql" />
+    <Build Include="dbo\Tables\oledb Destination.sql" />
+    <Build Include="dbo\Tables\CA500New.sql" />
+    <Build Include="dbo\Tables\Eventhandelr-Project.sql" />
+    <Build Include="dbo\Tables\Identity_Test.sql" />
+    <Build Include="Security\MaskUser.sql" />
+    <Build Include="Security\MaskUsers.sql" />
+    <Build Include="Security\UserMask.sql" />
+    <Build Include="dbo\Functions\Addanumber.sql" />
+    <Build Include="dbo\Functions\UDFDateName.sql" />
+    <Build Include="dbo\Functions\east_or_west.sql" />
+    <Build Include="dbo\Functions\UDF_Capitalize.sql" />
+    <Build Include="dbo\Functions\UDFTaxCalu.sql" />
+    <Build Include="dbo\User Defined Types\Name.sql" />
+    <Build Include="dbo\User Defined Types\MyOrder.sql" />
+    <Build Include="Security\ETL.sql" />
+    <Build Include="Security\Staging.sql" />
+    <Build Include="Security\Target.sql" />
+    <Build Include="dbo\Sequences\Sh.sql" />
+    <Build Include="dbo\View_Company.sql" />
+  </ItemGroup>
+</Project>
